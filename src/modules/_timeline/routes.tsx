@@ -6,7 +6,7 @@ export function timeline() {
   return (
     <Route>
       {main()}
-      {/* {dependency()}		 */}
+      {dependency()}
     </Route>
   );
 }

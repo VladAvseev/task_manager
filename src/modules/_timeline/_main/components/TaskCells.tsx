@@ -1,13 +1,10 @@
-import { makeStyles } from "@mui/styles";
-import { TTaskInstance } from "../models/Task";
 import { TaskComponent } from "./TaskComponent";
-
-const useStyles = makeStyles(() => ({}));
+import { TTimelineTask } from "../api/getTimeline";
 
 type props = {
   startDate: Date;
   endDate: Date;
-  task: TTaskInstance;
+  task: TTimelineTask;
   daysRow: Date[];
 };
 
@@ -22,7 +19,6 @@ export const TaskCells: React.FC<props> = ({
   const endIndex =
     daysRow.map((date) => date.getTime()).indexOf(endDate.getTime()) + 2;
 
-  const styles = useStyles();
   return (
     <div
       style={{

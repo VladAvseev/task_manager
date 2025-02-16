@@ -1,8 +1,8 @@
 import { makeStyles } from "@mui/styles";
-import { TTaskInstance } from "../models/Task";
 import { WarningIcon } from "../../../../components/WarningIcon";
 import { Link } from "@mui/material";
 import { useParams } from "react-router-dom";
+import { TTimelineTask } from "../api/getTimelineDependencies";
 
 const useStyles = makeStyles(() => ({
   task: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 type props = {
-  task: TTaskInstance;
+  task: TTimelineTask;
 };
 
 export const TaskComponent: React.FC<props> = ({ task }) => {

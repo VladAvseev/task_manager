@@ -1,5 +1,4 @@
 import { makeStyles } from "@mui/styles";
-import { TTaskInstance } from "../models/Task";
 import {
   dateMinusOneDay,
   datePlusOneDay,
@@ -10,6 +9,7 @@ import { EmptyCells } from "./EmptyCells";
 import { TaskCells } from "./TaskCells";
 import { TaskWithLateDeadlineCells } from "./TaskWithLateDeadlineCells";
 import { TaskWithDeadlineCells } from "./TaskWithDeadlineCells";
+import { TTimelineTask } from "../api/getTimelineDependencies";
 
 const useStyles = makeStyles(() => ({
   gridContainer: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 type prefs = {
-  task: TTaskInstance;
+  task: TTimelineTask;
   startDate: Date;
   finishDate: Date;
   daysCount: number;
@@ -39,71 +39,71 @@ export const TimeLineRow: React.FC<prefs> = ({
   const styles = useStyles();
   return (
     <div className={styles.gridContainer}>
-      {datesDiference(start_date, startDate) > 0 ? (
+      {datesDiference(new Date(start_date), startDate) > 0 ? (
         <EmptyCells
           startDate={startDate}
-          endDate={dateMinusOneDay(start_date)}
+          endDate={dateMinusOneDay(new Date(start_date))}
           daysRow={daysRow}
         />
       ) : null}
-      {datesDiference(finish_date, deadline) > 0 ? (
+      {datesDiference(new Date(finish_date), new Date(deadline)) > 0 ? (
         <>
           <TaskWithLateDeadlineCells
-            startDate={start_date}
-            endDate={finish_date}
-            deadline={deadline}
+            startDate={new Date(start_date)}
+            endDate={new Date(finish_date)}
+            deadline={new Date(finish_date)}
             task={task}
             daysRow={daysRow}
           />
-          {datesDiference(finishDate, finish_date) > 0 ? (
+          {datesDiference(finishDate, new Date(finish_date)) > 0 ? (
             <EmptyCells
-              startDate={datePlusOneDay(finish_date)}
+              startDate={datePlusOneDay(new Date(finish_date))}
               endDate={finishDate}
               daysRow={daysRow}
             />
           ) : null}
         </>
       ) : null}
-      {datesDiference(deadline, finish_date) === 0 ? (
+      {datesDiference(new Date(deadline), new Date(finish_date)) === 0 ? (
         <>
           <TaskWithDeadlineCells
-            startDate={start_date}
-            endDate={finish_date}
+            startDate={new Date(start_date)}
+            endDate={new Date(finish_date)}
             task={task}
             daysRow={daysRow}
           />
-          {datesDiference(finishDate, deadline) > 0 ? (
+          {datesDiference(finishDate, new Date(deadline)) > 0 ? (
             <EmptyCells
-              startDate={datePlusOneDay(deadline)}
+              startDate={datePlusOneDay(new Date(deadline))}
               endDate={finishDate}
               daysRow={daysRow}
             />
           ) : null}
         </>
       ) : null}
-      {datesDiference(deadline, finish_date) > 0 ? (
+      {datesDiference(new Date(deadline), new Date(finish_date)) > 0 ? (
         <>
           <TaskCells
-            startDate={start_date}
-            endDate={finish_date}
+            startDate={new Date(start_date)}
+            endDate={new Date(finish_date)}
             daysRow={daysRow}
             task={task}
           />
-          {datesDiference(deadline, finish_date) > 1 ? (
+          {datesDiference(new Date(deadline), new Date(finish_date)) > 1 ? (
             <EmptyCells
-              startDate={datePlusOneDay(finish_date)}
-              endDate={dateMinusOneDay(deadline)}
+              startDate={datePlusOneDay(new Date(finish_date))}
+              endDate={dateMinusOneDay(new Date(deadline))}
               daysRow={daysRow}
             />
           ) : null}
           <DeadlineCell
-            startDate={deadline}
-            endDate={deadline}
+            startDate={new Date(finish_date)}
+            endDate={new Date(finish_date)}
             daysRow={daysRow}
           />
-          {datesDiference(finishDate, deadline) > 0 ? (
+          {datesDiference(finishDate, new Date(deadline)) > 0 ? (
             <EmptyCells
-              startDate={datePlusOneDay(deadline)}
+              startDate={datePlusOneDay(new Date(deadline))}
               endDate={finishDate}
               daysRow={daysRow}
             />

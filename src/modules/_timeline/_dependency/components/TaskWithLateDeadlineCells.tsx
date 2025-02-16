@@ -1,7 +1,6 @@
 import { makeStyles } from "@mui/styles";
-import { TTaskInstance } from "../models/Task";
 import { TaskComponent } from "./TaskComponent";
-import { datesDiference } from "../../../../utils/date";
+import { TTimelineTask } from "../api/getTimelineDependencies";
 
 const useStyles = makeStyles(() => ({
   cell: {
@@ -21,7 +20,7 @@ type props = {
   startDate: Date;
   endDate: Date;
   deadline: Date;
-  task: TTaskInstance;
+  task: TTimelineTask;
   daysRow: Date[];
 };
 

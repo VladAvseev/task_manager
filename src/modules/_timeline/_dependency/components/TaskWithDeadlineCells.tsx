@@ -1,6 +1,6 @@
 import { makeStyles } from "@mui/styles";
-import { TTaskInstance } from "../models/Task";
 import { TaskComponent } from "./TaskComponent";
+import { TTimelineTask } from "../api/getTimelineDependencies";
 
 const useStyles = makeStyles(() => ({
   cell: {
@@ -11,7 +11,7 @@ const useStyles = makeStyles(() => ({
 type props = {
   startDate: Date;
   endDate: Date;
-  task: TTaskInstance;
+  task: TTimelineTask;
   daysRow: Date[];
 };
 
