@@ -1,6 +1,6 @@
 import { makeStyles } from "@mui/styles";
 import { TaskComponent } from "./TaskComponent";
-import { TTimelineTask } from "../api/getTimelineDependencies";
+import { TTimelineTask } from "../../api/getTimelineDependencies";
 
 const useStyles = makeStyles(() => ({
   cell: {

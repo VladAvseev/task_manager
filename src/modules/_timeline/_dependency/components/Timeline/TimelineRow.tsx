@@ -3,13 +3,13 @@ import {
   dateMinusOneDay,
   datePlusOneDay,
   datesDiference,
-} from "../../../../utils/date";
+} from "../../../../../utils/date";
 import { DeadlineCell } from "./DeadlineCell";
 import { EmptyCells } from "./EmptyCells";
 import { TaskCells } from "./TaskCells";
 import { TaskWithLateDeadlineCells } from "./TaskWithLateDeadlineCells";
 import { TaskWithDeadlineCells } from "./TaskWithDeadlineCells";
-import { TTimelineTask } from "../api/getTimelineDependencies";
+import { TTimelineTask } from "../../api/getTimelineDependencies";
 
 const useStyles = makeStyles(() => ({
   gridContainer: {

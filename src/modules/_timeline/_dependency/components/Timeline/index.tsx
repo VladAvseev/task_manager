@@ -1,5 +1,5 @@
 import { makeStyles } from "@mui/styles";
-import { TimeLineRow } from "../TimelineRow";
+import { TimeLineRow } from "./TimelineRow";
 import { HeaderCell } from "../HeaderCell";
 import { CircularProgress } from "@mui/material";
 import { useTimelineDependenciesQuery } from "./query";

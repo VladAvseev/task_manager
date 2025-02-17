@@ -1,4 +1,4 @@
-import { TTimelineTask } from "../api/getTimelineDependencies";
+import { TTimelineTask } from "../../api/getTimelineDependencies";
 import { TaskComponent } from "./TaskComponent";
 
 type props = {

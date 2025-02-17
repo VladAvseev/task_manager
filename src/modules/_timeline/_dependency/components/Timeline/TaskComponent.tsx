@@ -1,8 +1,8 @@
 import { makeStyles } from "@mui/styles";
-import { WarningIcon } from "../../../../components/WarningIcon";
+import { WarningIcon } from "../../../../../components/WarningIcon";
 import { Link } from "@mui/material";
 import { useParams } from "react-router-dom";
-import { TTimelineTask } from "../api/getTimelineDependencies";
+import { TTimelineTask } from "../../api/getTimelineDependencies";
 
 const useStyles = makeStyles(() => ({
   task: {

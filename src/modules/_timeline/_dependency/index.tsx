@@ -1,6 +1,7 @@
 import { makeStyles } from "@mui/styles";
 import { Timeline } from "./components/Timeline";
 import { useParams } from "react-router-dom";
+import { Form } from "./components/Form";
 
 export const DependencyTimelinePage: React.FC = () => {
   const { id } = useParams();
@@ -9,7 +10,7 @@ export const DependencyTimelinePage: React.FC = () => {
   return (
     <div className={styles.page}>
       <Timeline id={Number(id)} />
-      {/* <Form id={Number(id)} /> */}
+      <Form id={Number(id)} />
     </div>
   );
 };
@@ -17,9 +18,10 @@ export const DependencyTimelinePage: React.FC = () => {
 const useStyles = makeStyles(() => ({
   page: {
     width: "calc(100vw -48px)",
-    height: "calc(100vh - 60px -48px)",
+    height: "calc(100vh - 60px - 48px)",
     margin: "84px 24px 0 24px",
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     boxShadow: "2px 2px 10px  #C2C2C2",
     padding: 8,
