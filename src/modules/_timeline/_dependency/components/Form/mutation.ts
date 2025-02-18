@@ -6,7 +6,7 @@ export const useChangeDeadlineMutation = () => {
   return useMutation({
     mutationFn: (request: TEditDeadlineParams) => editDeadline(request),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["timeline_tasks"] });
+      queryClient.invalidateQueries({ queryKey: ["tasks"] });
     },
   });
 };

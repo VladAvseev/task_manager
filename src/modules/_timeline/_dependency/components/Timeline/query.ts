@@ -3,7 +3,7 @@ import { getTimelineDependencies } from "../../api/getTimelineDependencies";
 
 export const useTimelineDependenciesQuery = (task_id?: string) => {
   return useQuery({
-    queryKey: ["timeline_tasks"],
+    queryKey: ["tasks"],
     queryFn: () =>
       getTimelineDependencies({ mock: true, task_id: Number(task_id) }),
   });

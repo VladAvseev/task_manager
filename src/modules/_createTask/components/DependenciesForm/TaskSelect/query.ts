@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { getTasks } from "../../api/getTasks";
+import { getTasks } from "../../../api/getTasks";
 
-export const useTasksQuery = () => {
+export const useDependencyTaskQuery = () => {
   return useQuery({
     queryKey: ["tasks"],
     queryFn: () => getTasks({ mock: true }),
