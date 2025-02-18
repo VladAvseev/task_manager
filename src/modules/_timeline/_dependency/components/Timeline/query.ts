@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { getTimelineDependencies } from "../../api/getTimelineDependencies";
 
-export const useTimelineDependenciesQuery = (task_id: number) => {
+export const useTimelineDependenciesQuery = (task_id?: string) => {
   return useQuery({
     queryKey: ["timeline_tasks"],
-    queryFn: () => getTimelineDependencies({ mock: true, task_id }),
+    queryFn: () =>
+      getTimelineDependencies({ mock: true, task_id: Number(task_id) }),
   });
 };

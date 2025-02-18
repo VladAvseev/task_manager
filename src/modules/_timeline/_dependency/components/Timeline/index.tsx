@@ -4,6 +4,7 @@ import { HeaderCell } from "../HeaderCell";
 import { CircularProgress } from "@mui/material";
 import { useTimelineDependenciesQuery } from "./query";
 import { datePlusOneDay, datesDiference } from "../../../../../utils/date";
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   main: {
@@ -42,11 +43,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-type props = {
-  id: number;
-};
-
-export const Timeline: React.FC<props> = ({ id }) => {
+export const Timeline: React.FC = () => {
+  const { id } = useParams();
   const { data = { tasks: [] }, isLoading } = useTimelineDependenciesQuery(id);
 
   const startDate = (): Date => {

@@ -1,16 +1,13 @@
 import { makeStyles } from "@mui/styles";
 import { Timeline } from "./components/Timeline";
-import { useParams } from "react-router-dom";
 import { Form } from "./components/Form";
 
 export const DependencyTimelinePage: React.FC = () => {
-  const { id } = useParams();
-
   const styles = useStyles();
   return (
     <div className={styles.page}>
-      <Timeline id={Number(id)} />
-      <Form id={Number(id)} />
+      <Timeline />
+      <Form />
     </div>
   );
 };
