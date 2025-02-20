@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    allowedHosts: ["rnbsa-88-201-202-114.a.free.pinggy.link"],
+    host: "localhost",
     port: 5001,
   },
 });
