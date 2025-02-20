@@ -27,8 +27,12 @@ export const Header: React.FC = () => {
     return (
       <Paper className={styles.header}>
         <div className={styles.flex}>
-          <Link href={"/board"}>Доска задач</Link>
-          <Link href={"/create_task"}>Создать задачу</Link>
+          <Link href={"/board"} style={{ textDecoration: "none" }}>
+            Доска задач
+          </Link>
+          <Link href={"/create_task"} style={{ textDecoration: "none" }}>
+            Создать задачу
+          </Link>
         </div>
       </Paper>
     );
@@ -38,8 +42,12 @@ export const Header: React.FC = () => {
     return (
       <Paper className={styles.header}>
         <div className={styles.flex}>
-          <Link href={"/main_timeline"}>Таймлайн</Link>
-          <Link href={"/create_task"}>Создать задачу</Link>
+          <Link href={"/main_timeline"} style={{ textDecoration: "none" }}>
+            Таймлайн
+          </Link>
+          <Link href={"/create_task"} style={{ textDecoration: "none" }}>
+            Создать задачу
+          </Link>
         </div>
       </Paper>
     );
@@ -49,9 +57,15 @@ export const Header: React.FC = () => {
     return (
       <Paper className={styles.header}>
         <div className={styles.flex}>
-          <Link href={"/board"}>Доска</Link>
-          <Link href={"/main_timeline"}>Таймлайн</Link>
-          <Link href={"/create_task"}>Создать задачу</Link>
+          <Link href={"/board"} style={{ textDecoration: "none" }}>
+            Доска
+          </Link>
+          <Link href={"/main_timeline"} style={{ textDecoration: "none" }}>
+            Таймлайн
+          </Link>
+          <Link href={"/create_task"} style={{ textDecoration: "none" }}>
+            Создать задачу
+          </Link>
         </div>
       </Paper>
     );
@@ -61,9 +75,15 @@ export const Header: React.FC = () => {
     return (
       <Paper className={styles.header}>
         <div className={styles.flex}>
-          <Link href={"/board"}>Доска задач</Link>
-          <Link href={"/main_timeline"}>Таймлайн</Link>
-          <Link href={"/create_task"}>Создать задачу</Link>
+          <Link href={"/board"} style={{ textDecoration: "none" }}>
+            Доска задач
+          </Link>
+          <Link href={"/main_timeline"} style={{ textDecoration: "none" }}>
+            Таймлайн
+          </Link>
+          <Link href={"/create_task"} style={{ textDecoration: "none" }}>
+            Создать задачу
+          </Link>
         </div>
       </Paper>
     );
@@ -73,8 +93,12 @@ export const Header: React.FC = () => {
     return (
       <Paper className={styles.header}>
         <div className={styles.flex}>
-          <Link href={"/board"}>Доска</Link>
-          <Link href={"/main_timeline"}>Таймлайн</Link>
+          <Link href={"/board"} style={{ textDecoration: "none" }}>
+            Доска
+          </Link>
+          <Link href={"/main_timeline"} style={{ textDecoration: "none" }}>
+            Таймлайн
+          </Link>
         </div>
       </Paper>
     );
@@ -83,9 +107,15 @@ export const Header: React.FC = () => {
   return (
     <Paper className={styles.header}>
       <div className={styles.flex}>
-        <Link href={"/board"}>Доска</Link>
-        <Link href={"/main_timeline"}>Таймлайн</Link>
-        <Link href={"/create_task"}>Создать задачу</Link>
+        <Link href={"/board"} style={{ textDecoration: "none" }}>
+          Доска
+        </Link>
+        <Link href={"/main_timeline"} style={{ textDecoration: "none" }}>
+          Таймлайн
+        </Link>
+        <Link href={"/create_task"} style={{ textDecoration: "none" }}>
+          Создать задачу
+        </Link>
       </div>
     </Paper>
   );

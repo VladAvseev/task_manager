@@ -1,8 +1,9 @@
 import { makeStyles } from "@mui/styles";
-import { Paper } from "@mui/material";
+import { CircularProgress, Paper } from "@mui/material";
 import { Provider } from "jotai";
 import { Form } from "./components/Form";
 import { FormHeader } from "./components/FormHeader";
+import { useGetTaskInfoQuery } from "./components/FormHeader/query";
 
 const useStyles = makeStyles(() => ({
   page: {
@@ -18,6 +19,15 @@ const useStyles = makeStyles(() => ({
 
 export const Page: React.FC = () => {
   const styles = useStyles();
+  const { isLoading } = useGetTaskInfoQuery();
+
+  if (isLoading)
+    return (
+      <Paper className={styles.page}>
+        <CircularProgress style={{ display: "block", margin: "100px auto" }} />
+      </Paper>
+    );
+
   return (
     <Provider>
       <Paper className={styles.page}>

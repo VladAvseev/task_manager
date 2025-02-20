@@ -6,6 +6,7 @@ import { Header } from "./components/Header";
 import { ErrorPage } from "./modules/_error";
 import { timeline } from "./modules/_timeline/routes";
 import { createTask } from "./modules/_createTask/routes";
+import { editTask } from "./modules/_editTask/routes";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ function App() {
           {board()}
           {timeline()}
           {createTask()}
+          {editTask()}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

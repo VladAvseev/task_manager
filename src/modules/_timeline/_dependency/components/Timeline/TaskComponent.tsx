@@ -9,12 +9,10 @@ const useStyles = makeStyles(() => ({
     width: "100%",
     height: "100%",
     padding: 10,
-    opacity: 0.7,
     borderRadius: 5,
     color: "white",
     "&:hover": {
-      opacity: 0.75,
-      border: "2px solid #444444",
+      transform: "scale(1.05)",
     },
     display: "flex",
     alignItems: "center",
@@ -39,7 +37,10 @@ export const TaskComponent: React.FC<props> = ({ task }) => {
 
   const styles = useStyles();
   return (
-    <Link href={`/dependency_timeline/${task.id}`}>
+    <Link
+      href={`/dependency_timeline/${task.id}`}
+      style={{ textDecoration: "none" }}
+    >
       <div
         className={styles.task}
         style={{
