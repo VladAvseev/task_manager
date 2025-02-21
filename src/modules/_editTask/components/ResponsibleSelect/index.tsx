@@ -13,7 +13,9 @@ export const ResponsibleSelect = () => {
       <InputLabel>Ответственный за задачу</InputLabel>
       <Select
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) =>
+          setValue(e.target.value ? Number(e.target.value) : null)
+        }
         fullWidth
         IconComponent={
           value

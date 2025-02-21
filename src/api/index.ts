@@ -4,13 +4,10 @@ export const baseURL = "http://192.168.1.100:5002";
 
 axios.defaults.baseURL = baseURL;
 
-export const apiGet = (
-  url: string,
-  params?: unknown
-): Promise<AxiosResponse> => {
+export const apiGet = (url: string, params?: any): Promise<AxiosResponse> => {
   let queryString = "?";
   if (params) {
-    for (let key of Object.keys(params)) {
+    for (const key of Object.keys(params)) {
       queryString += `${key}=${params[key]}&`;
     }
   }

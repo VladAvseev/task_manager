@@ -5,6 +5,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  SelectChangeEvent,
 } from "@mui/material";
 import { taskDependenciesAtom, TTaskDependency } from "../atoms";
 import React, { useState } from "react";
@@ -27,7 +28,9 @@ export const DependencyTypeSelect: React.FC<props> = ({
   const [dependencies, setDependencies] = useAtom(taskDependenciesAtom);
   const [value, setValue] = useState(task.type);
 
-  const selectHandler = (e) => {
+  const selectHandler = (
+    e: SelectChangeEvent<"depends_of" | "dependent_for" | null>
+  ) => {
     setDependencies(
       dependencies.map((item) => {
         if (item.selectId === selectIndex) {
@@ -38,9 +41,9 @@ export const DependencyTypeSelect: React.FC<props> = ({
         } else {
           return item;
         }
-      })
+      }) as TTaskDependency[]
     );
-    setValue(e.target.value);
+    setValue(e.target.value as "depends_of" | "dependent_for" | null);
   };
 
   return (
@@ -57,7 +60,13 @@ export const DependencyTypeSelect: React.FC<props> = ({
                 <IconButton
                   style={{ marginRight: 5 }}
                   size="small"
-                  onClick={() => selectHandler({ target: { value: null } })}
+                  onClick={() =>
+                    selectHandler({
+                      target: { value: null },
+                    } as SelectChangeEvent<
+                      "depends_of" | "dependent_for" | null
+                    >)
+                  }
                 >
                   <MdClear />
                 </IconButton>

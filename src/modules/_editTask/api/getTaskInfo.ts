@@ -11,6 +11,14 @@ export type TWarning = {
   task_id: number;
 };
 
+export type TDependecy = {
+  type: string;
+  title: string;
+  status: string;
+  id: number;
+  warnings: TWarning[];
+};
+
 export type TGetTaskDescriptionResponse = {
   id: number;
   status: string;
@@ -28,15 +36,7 @@ export type TGetTaskDescriptionResponse = {
   actual_start_date: string;
   actual_finish_date: string;
   actual_completion_days: number | null;
-  dependencies: [
-    {
-      type: string;
-      title: string;
-      status: string;
-      id: number;
-      warnings: TWarning[];
-    }
-  ];
+  dependencies: TDependecy[];
 };
 
 export const getTaskInfo = async ({

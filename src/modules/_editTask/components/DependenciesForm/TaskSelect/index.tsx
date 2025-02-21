@@ -22,7 +22,7 @@ export const TaskSelect: React.FC<props> = ({ task, selectIndex }) => {
   const [dependencies, setDependencies] = useAtom(taskDependenciesAtom);
   const [value, setValue] = useState(task.task_id);
 
-  const selectHandler = (e) => {
+  const selectHandler = (e: SelectChangeEvent<number | null>) => {
     setDependencies(
       dependencies.map((item) => {
         if (item.selectId === selectIndex) {
@@ -52,7 +52,11 @@ export const TaskSelect: React.FC<props> = ({ task, selectIndex }) => {
                 <IconButton
                   style={{ marginRight: 5 }}
                   size="small"
-                  onClick={() => selectHandler({ target: { value: null } })}
+                  onClick={() =>
+                    selectHandler({
+                      target: { value: null },
+                    } as SelectChangeEvent<number | null>)
+                  }
                 >
                   <MdClear />
                 </IconButton>
