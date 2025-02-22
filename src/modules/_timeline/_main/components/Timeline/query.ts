@@ -4,6 +4,6 @@ import { getTimeline } from "../../api/getTimeline";
 export const useTimelineQuery = () => {
   return useQuery({
     queryKey: ["tasks"],
-    queryFn: () => getTimeline({ mock: true }),
+    queryFn: () => getTimeline({ mock: false }),
   });
 };

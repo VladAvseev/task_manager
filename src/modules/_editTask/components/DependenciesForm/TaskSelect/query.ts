@@ -4,6 +4,6 @@ import { getTasks } from "../../../api/getTasks";
 export const useDependencyTaskQuery = () => {
   return useQuery({
     queryKey: ["tasks"],
-    queryFn: () => getTasks({ mock: true }),
+    queryFn: () => getTasks({ mock: false }),
   });
 };

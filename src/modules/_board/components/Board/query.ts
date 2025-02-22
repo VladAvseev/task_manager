@@ -4,6 +4,6 @@ import { getTasks } from "../../api/getTasks";
 export const useTasksQuery = () => {
   return useQuery({
     queryKey: ["tasks"],
-    queryFn: () => getTasks({ mock: true }),
+    queryFn: () => getTasks({ mock: false }),
   });
 };

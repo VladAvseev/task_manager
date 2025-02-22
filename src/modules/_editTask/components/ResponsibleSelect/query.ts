@@ -4,6 +4,6 @@ import { getResponsible } from "../../api/getResponsible";
 export const useResponsibleQuery = () => {
   return useQuery({
     queryKey: ["users"],
-    queryFn: () => getResponsible({ mock: true }),
+    queryFn: () => getResponsible({ mock: false }),
   });
 };

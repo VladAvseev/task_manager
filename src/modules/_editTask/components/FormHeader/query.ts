@@ -7,6 +7,6 @@ export const useGetTaskInfoQuery = () => {
   return useQuery({
     queryKey: ["tasks", id] as const,
     queryFn: ({ queryKey: [, id] }) =>
-      getTaskInfo({ mock: true, task_id: Number(id) }),
+      getTaskInfo({ mock: false, task_id: Number(id) }),
   });
 };
