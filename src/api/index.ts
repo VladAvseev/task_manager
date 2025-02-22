@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-export const baseURL = "http://192.168.1.100:5002";
+export const baseURL = "http://vladavseev.sknt.ru/api";
 
 axios.defaults.baseURL = baseURL;
 
