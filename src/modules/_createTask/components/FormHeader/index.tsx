@@ -25,7 +25,7 @@ export const FormHeader: React.FC = () => {
       title,
       description,
       responsible_user_id: responsible,
-      deadline: moment(deadline).format("DD.MM.YYYY"),
+      deadline: moment(deadline).format("DD-MM-YYYY"),
       days_for_completion: daysForComplete,
       dependencies: dependencies.map((item) => ({
         task_id: item.task_id as number,
